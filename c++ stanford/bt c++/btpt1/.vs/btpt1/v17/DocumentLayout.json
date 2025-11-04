@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\coding\\btpt1\\",
+  "WorkspaceRootPath": "D:\\coding\\C-and-C-plus-plus\\bt c\u002B\u002B\\btpt1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2EF6E28-880C-45B0-9BF3-091712BB635B}|btpt1\\btpt1.vcxproj|D:\\coding\\btpt1\\btpt1\\btpt1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{C2EF6E28-880C-45B0-9BF3-091712BB635B}|btpt1\\btpt1.vcxproj|D:\\coding\\C-and-C-plus-plus\\bt c\u002B\u002B\\btpt1\\btpt1\\btpt1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C2EF6E28-880C-45B0-9BF3-091712BB635B}|btpt1\\btpt1.vcxproj|solutionrelative:btpt1\\btpt1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -32,11 +32,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "btpt1.cpp",
-              "DocumentMoniker": "D:\\coding\\btpt1\\btpt1\\btpt1.cpp",
+              "DocumentMoniker": "D:\\coding\\C-and-C-plus-plus\\bt c\u002B\u002B\\btpt1\\btpt1\\btpt1.cpp",
               "RelativeDocumentMoniker": "btpt1\\btpt1.cpp",
-              "ToolTip": "D:\\coding\\btpt1\\btpt1\\btpt1.cpp",
+              "ToolTip": "D:\\coding\\C-and-C-plus-plus\\bt c\u002B\u002B\\btpt1\\btpt1\\btpt1.cpp",
               "RelativeToolTip": "btpt1\\btpt1.cpp",
-              "ViewState": "AgIAAK4AAAAAAAAAAAAAAMQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-25T08:36:03.726Z",
               "EditorCaption": ""
