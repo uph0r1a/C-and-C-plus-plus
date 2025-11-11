@@ -7,13 +7,19 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < 5; i++)
     {
         printf("Student %d: ", i + 1);
-loop:
-        scanf("%d", &ages[i]);
-        if (ages[i] < 5 || ages[i] > 18)
+        while (1)
         {
-            printf("Age must be greater than 5 and less than 18.\n");
-            printf("Please enter the age for Student %d again: ", i + 1);
-            goto loop;
+            scanf("%d", &ages[i]);
+            if (ages[i] < 5 || ages[i] > 18)
+            {
+                printf("Age must be greater than 5 and less than 18.\n");
+                printf("Please enter the age for Student %d again: ", i + 1);
+            }
+            else
+            {
+                break;
+            }
+            
         }
     }
 
