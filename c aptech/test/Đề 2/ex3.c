@@ -138,7 +138,6 @@ int main(int argc, char const *argv[])
         switch (choice)
         {
         case 1:
-
             printf("Enter the total number of employees: ");
             scanf("%d", &number);
             if (employ != NULL)

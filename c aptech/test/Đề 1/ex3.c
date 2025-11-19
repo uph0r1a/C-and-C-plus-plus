@@ -59,9 +59,7 @@ float average(Student std[], int count)
 int main(int argc, char const *argv[])
 {
     Student std[5];
-    int choice;
-    int count = 0;
-    int flag = 1;
+    int choice, count = 0, flag = 1;
     while (flag)
     {
         menu();

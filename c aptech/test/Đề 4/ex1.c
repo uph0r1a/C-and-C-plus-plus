@@ -78,11 +78,11 @@ void sort(Mobile mobile[], int count)
         }
     }
     printf("+-------------------------------------------------------+\n");
-    printf("|%-20s|%-20s|%-12s|%-10s|\n", "Smartphone", "Manufacturer", "Release Year", "Price($)");
+    printf("|%-15s|%-15s|%-12s|%-10s|\n", "Smartphone", "Manufacturer", "Release Year", "Price($)");
     printf("+-------------------------------------------------------+\n");
     for (int i = 0; i < count; i++)
     {
-        printf("|%-20s|%-20s|%-12d|%-10.2f|\n", mobile[i].name, mobile[i].manufacturer, mobile[i].release_year, mobile[i].price);
+        printf("|%-15s|%-15s|%-12d|%-10.2f|\n", mobile[i].name, mobile[i].manufacturer, mobile[i].release_year, mobile[i].price);
         printf("+-------------------------------------------------------+\n");
     }
 }
@@ -163,11 +163,11 @@ void find(Mobile mobile[], int count)
 
     printf("Search Results: \n");
     printf("+-------------------------------------------------------+\n");
-    printf("|%-20s|%-20s|%-12s|%-10s|\n", "Smartphone", "Manufacturer", "Release Year", "Price($)");
+    printf("|%-15s|%-15s|%-12s|%-10s|\n", "Smartphone", "Manufacturer", "Release Year", "Price($)");
     printf("+-------------------------------------------------------+\n");
     for (int i = 0; i < size; i++)
     {
-        printf("|%-20s|%-20s|%-12d|%-10.2f|\n", suitable[i].name, suitable[i].manufacturer, suitable[i].release_year, suitable[i].price);
+        printf("|%-15s|%-15s|%-12d|%-10.2f|\n", suitable[i].name, suitable[i].manufacturer, suitable[i].release_year, suitable[i].price);
         printf("+-------------------------------------------------------+\n");
     }
     printf("%d smartphones found.", manufacturer_count);
@@ -213,11 +213,11 @@ void open()
     }
 
     printf("+-------------------------------------------------------+\n");
-    printf("|%-20s|%-20s|%-12s|%-10s|\n", "Smartphone", "Manufacturer", "Release Year", "Price($)");
+    printf("|%-15s|%-15s|%-12s|%-10s|\n", "Smartphone", "Manufacturer", "Release Year", "Price($)");
     printf("+-------------------------------------------------------+\n");
     while (fread(&temp, sizeof(Mobile), 1, f))
     {
-        printf("|%-20s|%-20s|%-12d|%-10.2f|\n", temp.name, temp.manufacturer, temp.release_year, temp.price);
+        printf("|%-15s|%-15s|%-12d|%-10.2f|\n", temp.name, temp.manufacturer, temp.release_year, temp.price);
         printf("+-------------------------------------------------------+\n");
     }
 }
