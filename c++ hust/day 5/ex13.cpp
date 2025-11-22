@@ -34,11 +34,20 @@ int Day_absent(int number_of_employees)
             }
         }
     }
+    return sum;
+}
+
+double Average_day_absent(int number_of_employee, int total_day_absent)
+{
+    return total_day_absent / number_of_employee;
 }
 
 int main(int argc, char const *argv[])
 {
     int number_of_employees = Number_of_emplyees();
+    int total_day_absent = Day_absent(number_of_employees);
+    double average_day_absent = Average_day_absent(number_of_employees, total_day_absent);
 
+    cout << "Average day absent: " << average_day_absent;
     return 0;
 }
