@@ -1,0 +1,10 @@
+SF1007 	 Pham Thanh Tung 	 Hai Duong 	 2014 	 5 	 1e+06 	 21000000 	 CNTT
+SF1002 	 Cao Ba Cuong 	 Thai Binh 	 2016 	 4 	 500000 	 16500000 	 KT
+SF1006 	 Vu Phuong Thao 	 Ha Nam 	 2016 	 4 	 500000 	 16500000 	 KD
+SF1001 	 Nguyen Minh Son 	 Nam Dinh 	 2016 	 4 	 500000 	 16500000 	 CNTT
+SF1004 	 Le Hai Ha 	 Ha Noi 	 2018 	 3 	 400000 	 12400000 	 KT
+SF1000 	 Tran Quoc Tuan 	 Ha Noi 	 2020 	 2 	 300000 	 8300000 	 CNTT
+SF1008 	 Tran Duc Minh 	 Ha Nam 	 2020 	 2 	 300000 	 8300000 	 CNTT
+SF1009 	 Le Minh Huy 	 Hai Phong 	 2020 	 2 	 300000 	 8300000 	 KD
+SF1003 	 Bui Minh Khue 	 Hai Duong 	 2022 	 2 	 200000 	 8200000 	 CNTT
+SF1005 	 Dang Hai Nam 	 Thai Binh 	 2022 	 2 	 200000 	 8200000 	 KD

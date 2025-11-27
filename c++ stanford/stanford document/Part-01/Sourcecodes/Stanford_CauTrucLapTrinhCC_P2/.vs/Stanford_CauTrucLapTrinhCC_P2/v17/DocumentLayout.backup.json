@@ -1,0 +1,97 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BA382A86-9C4C-46A5-8A11-BD21AAB7231A}|Stanford_BaiTapVongLapCC\\Stanford_BaiTapVongLapCC.vcxproj|D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_BaiTapVongLapCC\\Stanford_BaiTapVongLapCC.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{BA382A86-9C4C-46A5-8A11-BD21AAB7231A}|Stanford_BaiTapVongLapCC\\Stanford_BaiTapVongLapCC.vcxproj|solutionrelative:Stanford_BaiTapVongLapCC\\Stanford_BaiTapVongLapCC.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{247BC313-0624-427F-918A-A9FCB354B107}|Stanford_CauTrucVongLapCC\\Stanford_CauTrucVongLapCC.vcxproj|D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucVongLapCC\\Stanford_CauTrucVongLapCC.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{247BC313-0624-427F-918A-A9FCB354B107}|Stanford_CauTrucVongLapCC\\Stanford_CauTrucVongLapCC.vcxproj|solutionrelative:Stanford_CauTrucVongLapCC\\Stanford_CauTrucVongLapCC.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CB6692-E2E8-43F4-A8BB-C714296DBAE8}|Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2.vcxproj|D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E6CB6692-E2E8-43F4-A8BB-C714296DBAE8}|Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2.vcxproj|solutionrelative:Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Stanford_BaiTapVongLapCC.cpp",
+              "DocumentMoniker": "D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_BaiTapVongLapCC\\Stanford_BaiTapVongLapCC.cpp",
+              "RelativeDocumentMoniker": "Stanford_BaiTapVongLapCC\\Stanford_BaiTapVongLapCC.cpp",
+              "ToolTip": "D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_BaiTapVongLapCC\\Stanford_BaiTapVongLapCC.cpp*",
+              "RelativeToolTip": "Stanford_BaiTapVongLapCC\\Stanford_BaiTapVongLapCC.cpp*",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAgwJEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-07T07:02:25.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Stanford_CauTrucVongLapCC.cpp",
+              "DocumentMoniker": "D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucVongLapCC\\Stanford_CauTrucVongLapCC.cpp",
+              "RelativeDocumentMoniker": "Stanford_CauTrucVongLapCC\\Stanford_CauTrucVongLapCC.cpp",
+              "ToolTip": "D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucVongLapCC\\Stanford_CauTrucVongLapCC.cpp",
+              "RelativeToolTip": "Stanford_CauTrucVongLapCC\\Stanford_CauTrucVongLapCC.cpp",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAABwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-30T09:48:05.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Stanford_CauTrucLapTrinhCC_P2.cpp",
+              "DocumentMoniker": "D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2.cpp",
+              "RelativeDocumentMoniker": "Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2.cpp",
+              "ToolTip": "D:\\Stanford\\Courses\\CPlus\\CC112401\\CC112401CB\\Part-01\\Sourcecodes\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2.cpp",
+              "RelativeToolTip": "Stanford_CauTrucLapTrinhCC_P2\\Stanford_CauTrucLapTrinhCC_P2.cpp",
+              "ViewState": "AgIAACAAAAAAAAAAAAArwBYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-30T09:22:52.963Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 525,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

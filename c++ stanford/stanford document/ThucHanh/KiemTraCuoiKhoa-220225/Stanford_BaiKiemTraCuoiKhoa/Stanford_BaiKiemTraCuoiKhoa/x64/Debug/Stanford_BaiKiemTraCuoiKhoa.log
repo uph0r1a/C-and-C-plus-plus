@@ -1,0 +1,6 @@
+﻿  NhanVien.cpp
+D:\Stanford\Courses\CPlus\Projects\Stanford_BaiKiemTraCuoiKhoa\Stanford_BaiKiemTraCuoiKhoa\NhanVien.h(22,9): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'NhanVien.cpp')
+  
+D:\Stanford\Courses\CPlus\Projects\Stanford_BaiKiemTraCuoiKhoa\Stanford_BaiKiemTraCuoiKhoa\NhanVien.cpp(182,20): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  Stanford_BaiKiemTraCuoiKhoa.vcxproj -> D:\Stanford\Courses\CPlus\Projects\Stanford_BaiKiemTraCuoiKhoa\x64\Debug\Stanford_BaiKiemTraCuoiKhoa.exe

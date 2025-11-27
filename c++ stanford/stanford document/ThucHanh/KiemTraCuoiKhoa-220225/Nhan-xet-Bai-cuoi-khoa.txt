@@ -1,0 +1,21 @@
+* Nhận xét bài kiểm tra cuối khóa lớp CC112401CB:
+--------------------------------------------------
+
+* Anh:
+- Tạo được lớp NhanVien, có hàm tính tổng lương
+- Hàm nhập chưa nhập được danh sách và in thông tin nhân viên
+=> 2đ
+
+* Trí: 4đ
+- Tạo được lớp NhanVien, có hàm tính tổng lương nhưng chưa tổ chức trong lớp nhiều
+- Viết được hàm nhập danh sách nhân viên và in danh sách
+- Sắp xếp được lương nhân viên giảm dần
+
+* Nghĩa:
+- Tạo được lớp NhanVien, có hàm tính tổng lương
+- Hàm tính năm vào công ty của nhân viên thủ công
+- Hàm nhập chưa nhập được danh sách và in thông tin nhân viên
+=> 2đ
+
+* Phiệt:
+- Không nộp bài
