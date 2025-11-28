@@ -22,7 +22,7 @@ float Time_of_departure_first_day()
     int hours;
     int minutes;
 
-    cout<<"Enter the time of departure on the first day of the trip: ";
+    cout << "Enter the time of departure on the first day of the trip: ";
     while (1)
     {
         cout << "Enter hours (0-23): ";
@@ -35,7 +35,7 @@ float Time_of_departure_first_day()
         }
         cout << "Invalid time of departure on the first day of the trip\nRe-enter the time of departure on the first day of the trip: ";
     }
-    
+
     float time_of_departure_first_day = hours + minutes / 60.0;
 
     return time_of_departure_first_day;
@@ -46,7 +46,7 @@ float Time_of_arrival_home_last_day()
     int hours;
     int minutes;
 
-    cout<<"Enter the time of arrival back home on the last day of the trip: ";
+    cout << "Enter the time of arrival back home on the last day of the trip: ";
     while (1)
     {
         cout << "Enter hours (0-23): ";
@@ -59,7 +59,7 @@ float Time_of_arrival_home_last_day()
         }
         cout << "Invalid time of arrival back home on the last day of the trip\nRe-enter the time of arrival back home on the last day of the trip: ";
     }
-    
+
     float time_of_arrival_home_last_day = hours + minutes / 60.0;
 
     return time_of_arrival_home_last_day;
@@ -311,24 +311,27 @@ void getMealExpenses(int total_number_of_days_spent_on_trip, float time_of_depar
 int main(int argc, char const *argv[])
 {
     int total_number_of_days_spent_on_trip = Total_number_of_days_spent_on_trip();
-    float time_of_departure_first_day = Time_of_departure_first_day(), time_of_arrival_home_last_day = Time_of_arrival_home_last_day(), company_round_trip_airfare = Round_trip_airfare(), company_car_rentals = Car_rentals(), company_vehicle_expenses = Vehicle_expenses(), company_parking_fees, personal_cover_parking_fee = 0, company_taxi_fees, personal_cover_taxi_fee = 0, seminar_registration_fees = Seminar_registration_fees(), company_hotel_expenses, personal_cover_hotel_expenses = 0, total_meal, company_meal,total_expenses, total_allowable_expenses, total_personally_cover_expenses,saved;
+    float time_of_departure_first_day = Time_of_departure_first_day(), time_of_arrival_home_last_day = Time_of_arrival_home_last_day(), company_round_trip_airfare = Round_trip_airfare(), company_car_rentals = Car_rentals(), company_vehicle_expenses = Vehicle_expenses(), company_parking_fees, personal_cover_parking_fee = 0, company_taxi_fees, personal_cover_taxi_fee = 0, seminar_registration_fees = Seminar_registration_fees(), company_hotel_expenses, personal_cover_hotel_expenses = 0, total_meal, company_meal, total_expenses, total_allowable_expenses, total_personally_cover_expenses, saved, total_allowable;
 
     Parking_fees(company_parking_fees, personal_cover_parking_fee);
     Taxi_fees(company_taxi_fees, personal_cover_taxi_fee);
     Hotel_expense(company_hotel_expenses, personal_cover_hotel_expenses);
     getMealExpenses(total_number_of_days_spent_on_trip, time_of_departure_first_day, time_of_arrival_home_last_day, total_meal, company_meal);
 
+    total_allowable = company_round_trip_airfare + company_car_rentals + company_vehicle_expenses + (6 * total_number_of_days_spent_on_trip) + (10 * company_taxi_fees) + seminar_registration_fees + (90 * total_number_of_days_spent_on_trip) + company_meal;
     total_allowable_expenses = company_round_trip_airfare + company_car_rentals + company_vehicle_expenses + company_parking_fees + company_taxi_fees + seminar_registration_fees + company_hotel_expenses + company_meal;
-    total_personally_cover_expenses = personal_cover_parking_fee + personal_cover_taxi_fee+personal_cover_hotel_expenses+ (total_meal - company_meal);
+    total_personally_cover_expenses = personal_cover_parking_fee + personal_cover_taxi_fee + personal_cover_hotel_expenses + (total_meal - company_meal);
 
-    if (total_allowable_expenses < )
+    if (total_allowable_expenses < total_allowable)
     {
-        saved = - total_allowable_expenses;
+        saved = total_allowable - total_allowable_expenses;
     }
-    
 
     total_expenses = total_allowable_expenses + total_personally_cover_expenses;
 
-    cout<<"Total expenses incurred by the businessperson: "<<total_expenses<<endl<<"Total allowable expenses for the trip: "<<total_allowable_expenses<<endl<<"Excess that must be reim-bursed by the businessperson: "<<total_personally_cover_expenses<<endl<<"Amount saved by the businessperson: "<<saved;
+    cout << "Total expenses incurred by the businessperson: " << total_expenses << endl
+         << "Total allowable expenses for the trip: " << total_allowable_expenses << endl
+         << "Excess that must be reim-bursed by the businessperson: " << total_personally_cover_expenses << endl
+         << "Amount saved by the businessperson: " << saved;
     return 0;
 }
