@@ -86,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -99,6 +99,23 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c93a910a-0fa6-4307-93a4-f2bd61ec7828}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Stanford_BaiTapKeThuaDaHinhCC.cpp",
+              "DocumentMoniker": "D:\\coding\\C-and-C-plus-plus\\c\u002B\u002B stanford\\stanford document\\Part-05\\Sourcecodes\\Stanford_KeThuaDaHinhCC1124\\Stanford_BaiTapKeThuaDaHinhCC\\Stanford_BaiTapKeThuaDaHinhCC.cpp",
+              "RelativeDocumentMoniker": "Stanford_BaiTapKeThuaDaHinhCC\\Stanford_BaiTapKeThuaDaHinhCC.cpp",
+              "ToolTip": "D:\\coding\\C-and-C-plus-plus\\c\u002B\u002B stanford\\stanford document\\Part-05\\Sourcecodes\\Stanford_KeThuaDaHinhCC1124\\Stanford_BaiTapKeThuaDaHinhCC\\Stanford_BaiTapKeThuaDaHinhCC.cpp",
+              "RelativeToolTip": "Stanford_BaiTapKeThuaDaHinhCC\\Stanford_BaiTapKeThuaDaHinhCC.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-15T07:07:17.03Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -171,19 +188,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-15T07:12:22.018Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Stanford_BaiTapKeThuaDaHinhCC.cpp",
-              "DocumentMoniker": "D:\\coding\\C-and-C-plus-plus\\c\u002B\u002B stanford\\stanford document\\Part-05\\Sourcecodes\\Stanford_KeThuaDaHinhCC1124\\Stanford_BaiTapKeThuaDaHinhCC\\Stanford_BaiTapKeThuaDaHinhCC.cpp",
-              "RelativeDocumentMoniker": "Stanford_BaiTapKeThuaDaHinhCC\\Stanford_BaiTapKeThuaDaHinhCC.cpp",
-              "ToolTip": "D:\\coding\\C-and-C-plus-plus\\c\u002B\u002B stanford\\stanford document\\Part-05\\Sourcecodes\\Stanford_KeThuaDaHinhCC1124\\Stanford_BaiTapKeThuaDaHinhCC\\Stanford_BaiTapKeThuaDaHinhCC.cpp",
-              "RelativeToolTip": "Stanford_BaiTapKeThuaDaHinhCC\\Stanford_BaiTapKeThuaDaHinhCC.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-15T07:07:17.03Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
