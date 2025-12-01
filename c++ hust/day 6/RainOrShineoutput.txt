@@ -1,0 +1,17 @@
+June: 
+Rainy day: 9
+Cloudy day: 9
+Sunny day: 12
+July:
+Rainy day: 2
+Cloudy day: 10
+Sunny day: 18
+August:
+Rainy day: 2
+Cloudy day: 8
+Sunny day: 20
+Whole 3 months: 
+Rainy day: 13
+Cloudy day: 27
+Sunny day: 50
+Months had the largest number of rainy days: June

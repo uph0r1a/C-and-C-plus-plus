@@ -1,0 +1,4 @@
+The lowest number in the array: 8
+The highest number in the array: 89
+The total of the numbers in the array: 520
+The average of the numbers in the array: 43.3333
