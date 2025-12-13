@@ -57,7 +57,7 @@ vector<int> selectionSort(vector<int> &arr)
     return arr;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     vector<int> arr1 = {9, 8, 2, 1, 7, 3, 6, 4}, arr2 = {9, 8, 4, 3, 9, 8, 1, 2};
 
