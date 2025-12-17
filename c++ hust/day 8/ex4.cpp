@@ -22,16 +22,6 @@ void Sort(int arrScore[], string arrName[], int size)
     }
 }
 
-float Average(int arr[], int size)
-{
-    int sum = 0;
-    for (int i = 0; i < size; i++)
-    {
-        sum += arr[i];
-    }
-    return static_cast<float>(sum) / static_cast<float>(size);
-}
-
 int main(int argc, char const *argv[])
 {
     int size;
@@ -74,18 +64,6 @@ int main(int argc, char const *argv[])
         cout << "Student name " << i + 1 << ": " << arrName[i] << endl
              << "Student score " << i + 1 << ": " << arrScore[i] << endl;
     }
-
-    float average = Average(arrScore, size);
-
-    cout << "Sort score array: " << endl;
-    for (int i = 0; i < size; i++)
-    {
-
-        cout << "Name: " << arrName[i] << endl
-             << "Score: " << arrScore[i] << endl;
-    }
-
-    cout << "Average score: " << average << endl;
 
     delete[] arrScore;
     delete[] arrName;
