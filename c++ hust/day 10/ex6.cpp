@@ -18,7 +18,7 @@ void inputData(string &name)
         {
             break;
         }
-        cout << "Player name cannot be empty\nRe-enter the player names";
+        cout << "Player name cannot be empty\nRe-enter the player names: ";
     }
 }
 
@@ -35,11 +35,11 @@ void inputData(int &number)
     }
 }
 
-void SoccerScore(SoccerPlayer player[2])
+void SoccerScore(SoccerPlayer player[12])
 {
     int totalPoint = 0, MVPNumber, MVPPointScored = 0;
     string MVPPlayer;
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 12; i++)
     {
         cout << "Player " << i + 1 << endl;
         cout << "Enter player " << i + 1 << " name: ";
@@ -72,7 +72,7 @@ void SoccerScore(SoccerPlayer player[2])
          << setw(20) << "|Player point scored"
          << "|\n";
 
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 12; i++)
     {
         cout << left
              << setw(15) << ("|" + player[i].name)
@@ -87,7 +87,7 @@ void SoccerScore(SoccerPlayer player[2])
 
 int main(int argc, char const *argv[])
 {
-    SoccerPlayer player[2];
+    SoccerPlayer player[12];
     SoccerScore(player);
     return 0;
 }
