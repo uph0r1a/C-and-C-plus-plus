@@ -65,7 +65,7 @@ void SoccerScore(SoccerPlayer player[12])
 
     cout << "---------------------------------------------------" << endl;
     cout << "|MVP Number: " << MVPNumber << "\tMVP Name: " << MVPPlayer << setw(24) << "|" << endl;
-    cout << "---------------------------------------------------" << endl;
+    cout << "|-------------------------------------------------|" << endl;
     cout << left
          << setw(15) << "|Player name"
          << setw(15) << "|Player number"
@@ -80,7 +80,7 @@ void SoccerScore(SoccerPlayer player[12])
              << setw(20) << ("|" + to_string(player[i].pointScore))
              << "|\n";
     }
-    cout << "---------------------------------------------------" << endl;
+    cout << "|-------------------------------------------------|" << endl;
     cout << "|" << "Total point: " << totalPoint << right << setw(36) << "|" << endl;
     cout << "---------------------------------------------------" << endl;
 }
