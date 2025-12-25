@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     int mat[3][3] = {
         {1, 2, 3},
