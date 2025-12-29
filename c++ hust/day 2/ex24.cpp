@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     string name, city, college, profession, type_of_animal, pet_name;
     int age;

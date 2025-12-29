@@ -3,7 +3,7 @@
 #include <cctype>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     char package;
     float minutes, total;

@@ -11,7 +11,6 @@ int main(int argc, char const *argv[])
         if (number >= 1)
         {
             break;
-            ;
         }
         cout << "Do not accept a negative starting number\n";
         cout << "Re-enter a positive integer value: ";

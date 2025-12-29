@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     int number_of_student;
 

@@ -46,7 +46,7 @@ bool boardFull(char board[3][3])
     return true;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     char board[3][3] = {
         {'*', '*', '*'},

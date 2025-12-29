@@ -18,8 +18,8 @@ int main(int argc, char const *argv[])
     cout << "Movie Name: " << setw(35) << movie_name << "\n"
          << "Adult Tickets Sold: " << setw(20) << number_of_adult << "\n"
          << "Child Tickets Sold: " << setw(20) << number_of_child << "\n"
-         << "Gross Box Office Profit: " << setw(11) << "$" <<fixed << setprecision(2) << (float)(number_of_adult * 10 + number_of_child * 6) << "\n"
-         << "Net Box Office Profit: " << setw(14) << "$ " <<fixed << setprecision(2) << (float)((number_of_adult * 10 + number_of_child * 6) * 0.2) << "\n"
-         << "Amount Paid to Distributor: " << setw(8) << "$" <<fixed << setprecision(2) << (float)((number_of_adult * 10 + number_of_child * 6) - ((number_of_adult * 10 + number_of_child * 6) * 0.2)) << endl;
+         << "Gross Box Office Profit: " << setw(11) << "$" << fixed << setprecision(2) << (float)(number_of_adult * 10 + number_of_child * 6) << "\n"
+         << "Net Box Office Profit: " << setw(14) << "$ " << fixed << setprecision(2) << (float)((number_of_adult * 10 + number_of_child * 6) * 0.2) << "\n"
+         << "Amount Paid to Distributor: " << setw(8) << "$" << fixed << setprecision(2) << (float)((number_of_adult * 10 + number_of_child * 6) - ((number_of_adult * 10 + number_of_child * 6) * 0.2)) << endl;
     return 0;
 }

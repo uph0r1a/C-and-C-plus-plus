@@ -34,6 +34,6 @@ int main(int argc, char const *argv[])
 
     fibonacci = Fibonacci(n);
 
-    cout << "The " << n << "-th Fibonacci number is: " << fibonacci<<endl;
+    cout << "The " << n << "-th Fibonacci number is: " << fibonacci << endl;
     return 0;
 }

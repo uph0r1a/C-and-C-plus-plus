@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     double base, power;
     cout << "Enter the base of wavelength: ";

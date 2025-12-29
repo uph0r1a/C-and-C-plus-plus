@@ -8,7 +8,7 @@ struct Runner
     float time;
 };
 
-int main()
+int main(int argc, char const *argv[])
 {
     Runner runner[3];
 

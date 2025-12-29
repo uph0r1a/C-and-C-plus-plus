@@ -16,7 +16,7 @@ float ex(float x, int n)
     return ex(x, n - 1) + pow(x, n) / factorial(n);
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int n = 2;
     float x = 2;

@@ -43,15 +43,13 @@ int main(int argc, char const *argv[])
     cout << "Enter b: ";
     cin >> b;
 
-    
-
     if (LCM(a, b) == 0)
     {
         cout << "No LCM" << endl;
     }
     else
     {
-        cout << "LCM = " << LCM(a,b);
+        cout << "LCM = " << LCM(a, b);
     }
 
     return 0;

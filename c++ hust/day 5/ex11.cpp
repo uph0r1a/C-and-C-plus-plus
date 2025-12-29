@@ -38,7 +38,7 @@ void calcAverage(int a, int b, int c, int d, int e)
     cout << "Average score: " << average << endl;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int s1, s2, s3, s4, s5;
 

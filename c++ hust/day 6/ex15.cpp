@@ -4,7 +4,7 @@ using namespace std;
 
 bool testPIN(const vector<int> &, const vector<int> &);
 
-int main()
+int main(int argc, char const *argv[])
 {
     vector<int> pin1 = {2, 4, 1, 8, 7, 9, 0};
     vector<int> pin2 = {2, 4, 6, 8, 7, 9, 0};

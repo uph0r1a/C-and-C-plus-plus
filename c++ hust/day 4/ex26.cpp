@@ -86,6 +86,6 @@ a:
     ofstream f("final_report.txt");
     f << "Ending balance: " << balance << "\nTotal amount of deposits: " << total_deposit << "\nTotal amount of withdrawals: " << total_withdrawn << "\nTotal interest earned: " << total_interest;
     f.close();
-    
+
     return 0;
 }

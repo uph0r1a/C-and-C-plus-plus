@@ -38,7 +38,7 @@ void User_choice(string &user_choice)
 
 void Display_computer_choice(string computer_choice)
 {
-    cout << "Computer choice: " << computer_choice<<endl;
+    cout << "Computer choice: " << computer_choice << endl;
 }
 
 void Winner(string computer_choice, string user_choice)

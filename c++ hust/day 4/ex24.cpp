@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     string filename;
     int count = 0;

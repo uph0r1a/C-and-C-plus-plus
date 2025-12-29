@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
          << "1)Carbon Dioxide\n"
          << "2)Air\n"
          << "3)Helium\n"
-         <<"4)Hydrogen\n"
+         << "4)Hydrogen\n"
          << "Enter a number: ";
 loop2:
     cin >> choice;
@@ -26,7 +26,7 @@ loop1:
     switch (choice)
     {
     case 1:
-        cout << "The distance (in meters) between the source of the sound and the detection location: "<< (float)time * 258.0  << " m";
+        cout << "The distance (in meters) between the source of the sound and the detection location: " << (float)time * 258.0 << " m";
         break;
     case 2:
         cout << "The distance (in meters) between the source of the sound and the detection location: " << (float)time * 331.5 << " m";

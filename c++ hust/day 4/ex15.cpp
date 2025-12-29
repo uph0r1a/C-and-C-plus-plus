@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     int employee_number;
     float gross_pay, state_tax, federal_tax, FICA_withholdings;

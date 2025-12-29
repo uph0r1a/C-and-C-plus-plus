@@ -10,10 +10,8 @@ int main(int argc, char const *argv[])
     while (flag)
     {
         cout << "Enter a: ";
-        ;
         cin >> a;
         cout << "Enter b: ";
-        ;
         cin >> b;
         cout << "Enter operator: ";
         cin >> operator_input;

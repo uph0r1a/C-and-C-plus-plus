@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     int day, month, year, monthCode[] = {6, 2, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4}, maxDay[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     while (1)

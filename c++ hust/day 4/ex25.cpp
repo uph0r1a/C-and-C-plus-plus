@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
     string filename;
     cout << "Enter the filename containing student names: ";
