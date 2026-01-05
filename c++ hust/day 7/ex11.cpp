@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
     string names[NUM_NAMES], line;
     int count = 0;
 
-    ifstream f("names.txt");
+    ifstream f("files/names.txt");
     if (!f)
     {
         cout << "Cannot open file" << endl;

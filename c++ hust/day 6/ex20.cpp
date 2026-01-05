@@ -1,19 +1,20 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <cstdlib>
 using namespace std;
 
 void Seatprice(float seatPrice[15])
 {
-    int choice, flag = 1;
+    int choice;
+    bool valid = false;
     string filename;
-    cout << "Do you want to: " << endl
-         << "(1)Enter the seat price " << endl
-         << "(2)Read from a file" << endl
+
+    cout << "Do you want to:\n"
+         << "(1) Enter the seat price\n"
+         << "(2) Read from a file\n"
          << "Enter choice: ";
 
-    do
+    while (!valid)
     {
         cin >> choice;
 
@@ -24,45 +25,45 @@ void Seatprice(float seatPrice[15])
                 cout << "Enter the seat price for row " << i + 1 << ": ";
                 cin >> seatPrice[i];
             }
-            flag = 0;
+            valid = true;
         }
-
         else if (choice == 2)
         {
             cout << "Enter the file name: ";
             cin >> filename;
 
-            ifstream f(filename);
-
+            ifstream f("files/" + filename);
             if (!f)
             {
-                cout << "Cannot open file" << endl;
+                cout << "Cannot open file\n";
                 return;
             }
 
             for (int i = 0; i < 15; i++)
             {
-                f >> seatPrice[i];
+                if (!(f >> seatPrice[i]))
+                {
+                    cout << "Invalid file format\n";
+                    return;
+                }
             }
 
             f.close();
+            valid = true;
         }
         else
         {
-            cout << "Invalid choice" << endl
-                 << "Re-enter the choice: ";
+            cout << "Invalid choice. Re-enter choice: ";
         }
-
-    } while (flag);
+    }
 }
 
 void Ticket(string seatingChart[15][30], float seatPrice[15], int &ticketSale)
 {
-    int choice, row, seat;
-    ifstream f("seatingChart.txt");
+    ifstream f("files/seatingChart.txt");
     if (!f)
     {
-        cout << "Cannot open file";
+        cout << "Cannot open seating chart file\n";
         return;
     }
 
@@ -70,101 +71,84 @@ void Ticket(string seatingChart[15][30], float seatPrice[15], int &ticketSale)
     for (int i = 0; i < 15; i++)
     {
         getline(f, line);
+        if (line.length() < 30)
+        {
+            cout << "Invalid seating chart format\n";
+            return;
+        }
+
         for (int j = 0; j < 30; j++)
         {
             seatingChart[i][j] = string(1, line[j]);
         }
     }
+    f.close();
 
-    do
+    int choice = 1;
+    int row, seat;
+
+    while (choice == 1)
     {
         system("clear");
-        cout << "\t123456789012345678901234567890" << endl;
-
+        cout << "\n\t123456789012345678901234567890\n";
         for (int i = 0; i < 15; i++)
         {
             cout << "Row " << i + 1 << "\t";
             for (int j = 0; j < 30; j++)
-            {
                 cout << seatingChart[i][j];
-            }
             cout << endl;
         }
 
-        cout << "Input the row and seat: " << endl;
-
-        while (1)
+        while (true)
         {
-            cout << "Enter the row(1-15): ";
-            while (1)
-            {
-                cin >> row;
-                if (row >= 1 && row <= 15)
-                {
-                    break;
-                }
-                cout << "Invalid row\nRe-enter the row(1-15): ";
-            }
+            cout << "Enter row (1-15): ";
+            cin >> row;
+            cout << "Enter seat (1-30): ";
+            cin >> seat;
 
-            cout << "Enter the seat(1-30): ";
-            while (1)
+            if (row < 1 || row > 15 || seat < 1 || seat > 30)
             {
-                cin >> seat;
-                if (seat >= 1 && seat <= 30)
-                {
-                    break;
-                }
-                cout << "Invalid seat\nRe-enter the seat(1-30): ";
+                cout << "Invalid row or seat\n";
+                continue;
             }
 
             if (seatingChart[row - 1][seat - 1] == "#")
             {
-                ticketSale++;
                 seatingChart[row - 1][seat - 1] = "*";
+                ticketSale++;
                 break;
             }
-            cout << "Seat taken\nRe-enter row and seat: ";
-        }
-        cout << "Do you want to continue: " << endl
-             << "(1)Yes" << endl
-             << "(0)No" << endl;
-
-        while (1)
-        {
-            cin >> choice;
-            if (choice == 1 || choice == 0)
+            else
             {
-                break;
+                cout << "Seat already taken\n";
             }
-            cout << "Invalid choice\nRe-enter option: ";
         }
 
-    } while (choice);
+        cout << "Do you want to continue?\n(1) Yes\n(0) No\n";
+        cin >> choice;
+    }
 }
 
 void Summary(string seatingChart[15][30], int ticketSale)
 {
-    int availablePerRow, totalAvailable = 0;
-    cout << "Seats have been sold: " << ticketSale << endl
-         << "Seats available per row: " << endl;
+    int totalAvailable = 0;
+
+    cout << "\nSeats sold: " << ticketSale << endl;
+    cout << "Seats available per row:\n";
 
     for (int i = 0; i < 15; i++)
     {
-        availablePerRow = 0;
-        cout << "Row " << i << "\t";
+        int availablePerRow = 0;
         for (int j = 0; j < 30; j++)
         {
             if (seatingChart[i][j] == "#")
-            {
                 availablePerRow++;
-            }
         }
-        cout << availablePerRow;
+        cout << "Row " << i + 1 << ": " << availablePerRow << endl;
         totalAvailable += availablePerRow;
-        cout << endl;
     }
 
-    cout << "Seats available in the entire auditorium: " << totalAvailable << endl;
+    cout << "Total seats available: " << totalAvailable << endl;
 }
 
 int main(int argc, char const *argv[])
@@ -172,8 +156,10 @@ int main(int argc, char const *argv[])
     int ticketSale = 0;
     float seatPrice[15];
     string seatingChart[15][30];
+
     Seatprice(seatPrice);
     Ticket(seatingChart, seatPrice, ticketSale);
     Summary(seatingChart, ticketSale);
+
     return 0;
 }

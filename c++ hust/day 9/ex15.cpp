@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
     char character;
     int upperCaseCount = 0, lowerCaseCount = 0, digitsCount = 0;
 
-    ifstream f("text.txt");
+    ifstream f("files/text.txt");
 
     if (!f)
     {

@@ -8,8 +8,8 @@ void Name_search()
 {
     vector<string> boy, girl;
 
-    ifstream f1("GirlNames.txt");
-    ifstream f2("BoyNames.txt");
+    ifstream f1("files/GirlNames.txt");
+    ifstream f2("files/BoyNames.txt");
 
     if (!f1 || !f2)
     {

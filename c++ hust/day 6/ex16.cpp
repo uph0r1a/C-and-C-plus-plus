@@ -9,7 +9,7 @@ void WSC()
     vector<string> teams;
     vector<string> winners;
     string search;
-    ifstream f1("Teams.txt");
+    ifstream f1("files/Teams.txt");
 
     if (!f1)
     {
@@ -45,7 +45,7 @@ void WSC()
         cout << "Team name didnt exist\nRe-enter the name of one of the teams: ";
     }
 
-    ifstream f2("WorldSeriesWinners.txt");
+    ifstream f2("files/WorldSeriesWinners.txt");
     if (!f2)
     {
         cout << "Cannot open file";

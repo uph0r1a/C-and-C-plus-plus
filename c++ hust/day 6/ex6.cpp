@@ -6,7 +6,7 @@ using namespace std;
 void Rain_or_shine()
 {
 
-    ifstream f1("RainOrShine.txt");
+    ifstream f1("files/RainOrShine.txt");
 
     if (!f1)
     {
@@ -71,7 +71,7 @@ void Rain_or_shine()
         maxrainMonth = "August";
     }
 
-    ofstream f2("RainOrShineoutput.txt");
+    ofstream f2("files/RainOrShineoutput.txt");
 
     if (!f2)
     {

@@ -15,8 +15,8 @@ void Exam_grader()
     char correct[20], answer[20];
     int number_of_missed = 0, i = 0;
 
-    ifstream f1("CorrectAnswers.txt");
-    ifstream f2("StudentAnswers.txt");
+    ifstream f1("files/CorrectAnswers.txt");
+    ifstream f2("files/StudentAnswers.txt");
 
     if (!f1 || !f2)
     {

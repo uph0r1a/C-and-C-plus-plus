@@ -10,7 +10,7 @@ void number()
     cout << "Enter file name: ";
     cin >> name;
 
-    ifstream f1(name);
+    ifstream f1("files/" + name);
 
     if (!f1)
     {
@@ -26,7 +26,7 @@ void number()
     }
 
     f1.close();
-    f1.open(name);
+    f1.open("files/" + name);
 
     if (!f1)
     {
@@ -55,7 +55,7 @@ void number()
         sum += arr[i];
     }
 
-    ofstream f2("numbersoutput.txt");
+    ofstream f2("files/numbersoutput.txt");
 
     f2 << "The lowest number in the array: " << min << endl
        << "The highest number in the array: " << max << endl
