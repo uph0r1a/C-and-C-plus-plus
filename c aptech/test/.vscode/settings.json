@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "system_error": "c",
-        "xlocale": "c",
-        "iterator": "c",
-        "xmemory": "c",
-        "xutility": "c"
-    }
-}
