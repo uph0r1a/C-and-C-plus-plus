@@ -9,19 +9,19 @@ public:
     {
         if (validDate(month, day, year))
         {
-            std::cout << month << "/" << day << "/" << year << std::endl
-                      << monthName[month - 1] << " " << day << ", " << year << std::endl
-                      << day << " " << monthName[month - 1] << " " << year << std::endl;
+            cout << month << "/" << day << "/" << year << endl
+                 << monthName[month - 1] << " " << day << ", " << year << endl
+                 << day << " " << monthName[month - 1] << " " << year << endl;
         }
         else
         {
-            std::cout << "Invalid date" << std::endl;
+            cout << "Invalid date" << endl;
         }
     }
 
 private:
     int month, day, year;
-    std::string monthName[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    string monthName[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
     bool isLeapYear(int year)
     {
