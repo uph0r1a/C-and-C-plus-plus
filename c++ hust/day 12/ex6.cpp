@@ -22,26 +22,17 @@ public:
 
     void setItemNumber(int number)
     {
-        if (number >= 0)
-        {
-            itemNumber = number;
-        }
+        itemNumber = number;
     }
 
     void setQuantity(int quan)
     {
-        if (quan >= 0)
-        {
-            quantity = quan;
-        }
+        quantity = quan;
     }
 
     void setCost(int c)
     {
-        if (c >= 0)
-        {
-            cost = c;
-        }
+        cost = c;
     }
 
     void setTotalCost()
@@ -77,9 +68,45 @@ private:
 int main(int argc, char const *argv[])
 {
     Inventory inventory;
-    inventory.setItemNumber(1);
-    inventory.setQuantity(2);
-    inventory.setCost(2);
+    int tempItemNumber, tempQuantity;
+    double tempCost;
+
+    cout << "Enter item number: ";
+    while (1)
+    {
+        cin >> tempItemNumber;
+        if (tempItemNumber >= 0)
+        {
+            inventory.setItemNumber(tempItemNumber);
+            break;
+        }
+        cout << "Item number must not be negative\nRe-enter item number: ";
+    }
+
+    cout << "Enter quantity: ";
+    while (1)
+    {
+        cin >> tempQuantity;
+        if (tempQuantity >= 0)
+        {
+            inventory.setQuantity(tempQuantity);
+            break;
+        }
+        cout << "Quantity must not be negative\nRe-enter quantity: ";
+    }
+
+    cout << "Enter cost: ";
+    while (1)
+    {
+        cin >> tempCost;
+        if (tempCost >= 0)
+        {
+            inventory.setCost(tempCost);
+            break;
+        }
+        cout << "Cost must not be negative\nRe-enter cost: ";
+    }
+
     inventory.setTotalCost();
 
     cout << "Item number: " << inventory.getItemNumber() << endl

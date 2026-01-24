@@ -34,7 +34,7 @@ public:
 
     int brake()
     {
-        speed = 0 ? speed = 0 : speed -= 5;
+        speed <= 0 ? speed = 0 : speed -= 5;
     }
 
 private:
@@ -57,7 +57,7 @@ int main(int argc, char const *argv[])
 
     cout << "Speed: " << car.getSpeed() << endl;
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 6; i++)
     {
         car.brake();
     }
