@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
-
 using namespace std;
 
 class InventoryItem
@@ -9,99 +8,133 @@ class InventoryItem
 private:
     string description;
     double cost;
-    int units;
+    int onHand;
 
 public:
-    InventoryItem()
-    {
-        description = "";
-        cost = 0.0;
-        units = 0;
-    }
-
-    InventoryItem(string desc)
-    {
-        description = desc;
-        cost = 0.0;
-        units = 0;
-    }
-
-    InventoryItem(string desc, double c, int u)
-    {
-        description = desc;
-        cost = c;
-        units = u;
-    }
-
-    void setDescription(string d)
+    InventoryItem(string d = "", double c = 0.0, int o = 0)
     {
         description = d;
-    }
-
-    void setCost(double c)
-    {
         cost = c;
+        onHand = o;
     }
 
-    void setUnits(int u)
-    {
-        units = u;
-    }
+    string getDescription() const { return description; }
+    double getCost() const { return cost; }
+    int getOnHand() const { return onHand; }
 
-    string getDescription() const
+    void reduceOnHand(int qty)
     {
-        return description;
-    }
-
-    double getCost() const
-    {
-        return cost;
-    }
-
-    int getUnits() const
-    {
-        return units;
+        onHand -= qty;
     }
 };
 
 class CashRegister
 {
 private:
-    InventoryItem item;
+    InventoryItem &item;
+    int quantity;
 
 public:
-    void setItemPurchased(string description)
+    CashRegister(InventoryItem &i, int q)
+        : item(i), quantity(q) {}
+
+    double getUnitPrice() const
     {
-        item.setDescription(description);
+        return item.getCost() * 1.30;
+    }
+
+    double getSubtotal() const
+    {
+        return getUnitPrice() * quantity;
+    }
+
+    double getTax() const
+    {
+        return getSubtotal() * 0.06;
+    }
+
+    double getTotal() const
+    {
+        return getSubtotal() + getTax();
+    }
+
+    void processSale()
+    {
+        item.reduceOnHand(quantity);
     }
 };
 
 int main(int argc, char const *argv[])
 {
-    InventoryItem item1;
-    item1.setDescription("Hammer");
-    item1.setCost(6.95);
-    item1.setUnits(12);
+    cout << fixed << setprecision(2);
 
-    InventoryItem item2("Pliers");
-    InventoryItem item3("Wrench", 8.75, 20);
+    const int SIZE = 3;
 
-    cout << "The following items are in inventory:\n";
-    cout << setprecision(2) << fixed << showpoint;
+    InventoryItem inventory[SIZE] =
+        {
+            InventoryItem("Hammer", 6.95, 12),
+            InventoryItem("Pliers", 5.50, 10),
+            InventoryItem("Wrench", 8.75, 20)};
 
-    cout << "Description: " << item1.getDescription() << endl;
-    cout << "Cost: $" << item1.getCost() << endl;
-    cout << "Units on Hand: " << item1.getUnits() << endl
-         << endl;
+    int choice;
+    char again;
 
-    cout << "Description: " << item2.getDescription() << endl;
-    cout << "Cost: $" << item2.getCost() << endl;
-    cout << "Units on Hand: " << item2.getUnits() << endl
-         << endl;
+    do
+    {
+        cout << "\n===== INVENTORY MENU =====\n";
+        for (int i = 0; i < SIZE; i++)
+        {
+            cout << i + 1 << ". "
+                 << inventory[i].getDescription()
+                 << " ($" << inventory[i].getCost()
+                 << ", On Hand: " << inventory[i].getOnHand()
+                 << ")\n";
+        }
+        cout << "0. Exit\n";
 
-    cout << "Description: " << item3.getDescription() << endl;
-    cout << "Cost: $" << item3.getCost() << endl;
-    cout << "Units on Hand: " << item3.getUnits() << endl;
+        do
+        {
+            cout << "\nSelect an item: ";
+            cin >> choice;
+        } while (choice < 0 || choice > SIZE);
+
+        if (choice == 0)
+            break;
+
+        InventoryItem &selectedItem = inventory[choice - 1];
+        int quantity;
+
+        do
+        {
+            cout << "Enter quantity to purchase: ";
+            cin >> quantity;
+
+            if (quantity < 0)
+                cout << "Quantity cannot be negative.\n";
+            else if (quantity > selectedItem.getOnHand())
+                cout << "Not enough items in stock.\n";
+
+        } while (quantity < 0 || quantity > selectedItem.getOnHand());
+
+        CashRegister sale(selectedItem, quantity);
+
+        cout << "\n----- RECEIPT -----\n";
+        cout << "Item: " << selectedItem.getDescription() << endl;
+        cout << "Subtotal: $" << sale.getSubtotal() << endl;
+        cout << "Tax: $" << sale.getTax() << endl;
+        cout << "Total: $" << sale.getTotal() << endl;
+
+        sale.processSale();
+
+        cout << "Remaining units: "
+             << selectedItem.getOnHand() << endl;
+
+        cout << "\nMake another purchase? (y/n): ";
+        cin >> again;
+
+    } while (tolower(again) == 'y');
+
+    cout << "\nThank you for shopping!\n";
 
     return 0;
 }
