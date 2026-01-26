@@ -1,7 +1,14 @@
 #include <iostream>
-#include <ex2.h>
 #include <list>
 using namespace std;
+
+class ex1
+{
+private:
+    
+public:
+
+};
 
 int main(int argc, char const *argv[])
 {

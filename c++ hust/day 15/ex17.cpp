@@ -1,6 +1,13 @@
 #include <iostream>
-#include <ex17.h>
 using namespace std;
+
+class ex1
+{
+private:
+    
+public:
+
+};
 
 int main(int argc, char const *argv[])
 {
