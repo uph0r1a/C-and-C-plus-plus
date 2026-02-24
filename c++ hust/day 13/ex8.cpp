@@ -1,16 +1,85 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-class ex1
+class Date
 {
-private:
-    
 public:
+    void dateForm(int month, int day, int year)
+    {
+        if (validDate(month, day, year))
+        {
+            cout << month << "/" << day << "/" << year << endl
+                 << monthName[month - 1] << " " << day << ", " << year << endl
+                 << day << " " << monthName[month - 1] << " " << year << endl;
+        }
+        else
+        {
+            cout << "Invalid date" << endl;
+        }
+    }
 
+    Date &operator++(){
+        ++day;
+        
+        if (day > monthInYear[month - 1] && month > 12)
+        {
+            day = 1;
+            month = 1;
+            year++;
+        }
+        else if (day > monthInYear[month - 1])
+        {
+            day = 1;
+            month++;
+        }
+        
+        return *this;
+    }
+
+    
+
+private:
+    int month, day, year;
+    string monthName[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    int monthInYear[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    bool isLeapYear(int year)
+    {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+
+    bool validDate(int month, int day, int year)
+    {
+        if (day < 1 || month < 1 || month > 12 || year < 1)
+        {
+            return false;
+        }
+
+        if (isLeapYear(year) && month == 2)
+        {
+            monthInYear[1] = 29;
+        }
+
+        return day <= monthInYear[month - 1];
+    }
 };
 
 int main(int argc, char const *argv[])
 {
+    int month, day, year;
+    Date d;
+
+    cout << "Enter the month: ";
+    cin >> month;
+
+    cout << "Enter the day: ";
+    cin >> day;
+
+    cout << "Enter the year: ";
+    cin >> year;
+
+    d.dateForm(month, day, year);
 
     return 0;
 }
