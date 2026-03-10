@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class ex1
+class FuelGauge
 {
 private:
     

@@ -1,85 +1,192 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 class Date
 {
-public:
-    void dateForm(int month, int day, int year)
+private:
+    int month, day, year;
+
+    string monthName[12] = {"January", "February", "March", "April",
+                            "May", "June", "July", "August",
+                            "September", "October", "November", "December"};
+
+    int daysInMonth(int m, int y) const
     {
-        if (validDate(month, day, year))
+        int monthDays[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+        if (m == 2 && isLeapYear(y))
+            return 29;
+
+        return monthDays[m - 1];
+    }
+
+    bool isLeapYear(int y) const
+    {
+        return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+    }
+
+    bool validDate(int m, int d, int y) const
+    {
+        if (y < 1 || m < 1 || m > 12 || d < 1)
+            return false;
+
+        if (d > daysInMonth(m, y))
+            return false;
+
+        return true;
+    }
+
+    int toDays() const
+    {
+        int total = day;
+
+        for (int y = 1; y < year; y++)
+            total += isLeapYear(y) ? 366 : 365;
+
+        for (int m = 1; m < month; m++)
+            total += daysInMonth(m, year);
+
+        return total;
+    }
+
+public:
+    Date(int m = 1, int d = 1, int y = 2000)
+    {
+        if (validDate(m, d, y))
         {
-            cout << month << "/" << day << "/" << year << endl
-                 << monthName[month - 1] << " " << day << ", " << year << endl
-                 << day << " " << monthName[month - 1] << " " << year << endl;
+            month = m;
+            day = d;
+            year = y;
         }
         else
         {
-            cout << "Invalid date" << endl;
+            month = 1;
+            day = 1;
+            year = 2000;
         }
     }
 
-    Date &operator++(){
-        ++day;
-        
-        if (day > monthInYear[month - 1] && month > 12)
-        {
-            day = 1;
-            month = 1;
-            year++;
-        }
-        else if (day > monthInYear[month - 1])
+    Date &operator++()
+    {
+        day++;
+
+        if (day > daysInMonth(month, year))
         {
             day = 1;
             month++;
+
+            if (month > 12)
+            {
+                month = 1;
+                year++;
+            }
         }
-        
+
         return *this;
     }
 
-    
-
-private:
-    int month, day, year;
-    string monthName[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-    int monthInYear[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
-    bool isLeapYear(int year)
+    Date operator++(int)
     {
-        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        Date temp = *this;
+        ++(*this);
+        return temp;
     }
 
-    bool validDate(int month, int day, int year)
+    Date &operator--()
     {
-        if (day < 1 || month < 1 || month > 12 || year < 1)
+        day--;
+
+        if (day < 1)
         {
-            return false;
+            month--;
+
+            if (month < 1)
+            {
+                month = 12;
+                year--;
+            }
+
+            day = daysInMonth(month, year);
         }
 
-        if (isLeapYear(year) && month == 2)
+        return *this;
+    }
+
+    Date operator--(int)
+    {
+        Date temp = *this;
+        --(*this);
+        return temp;
+    }
+
+    int operator-(const Date &other) const
+    {
+        return abs(this->toDays() - other.toDays());
+    }
+
+    friend ostream &operator<<(ostream &out, const Date &obj)
+    {
+        out << obj.monthName[obj.month - 1] << " "
+            << obj.day << ", " << obj.year;
+        return out;
+    }
+
+    friend istream &operator>>(istream &in, Date &obj)
+    {
+        int m, d, y;
+        char slash1, slash2;
+
+        while (true)
         {
-            monthInYear[1] = 29;
+            cout << "Enter date (MM/DD/YYYY): ";
+            in >> m >> slash1 >> d >> slash2 >> y;
+
+            if (in.fail() || slash1 != '/' || slash2 != '/')
+            {
+                in.clear();
+                in.ignore(1000, '\n');
+                cout << "Invalid format. Try again.\n";
+                continue;
+            }
+
+            if (obj.validDate(m, d, y))
+            {
+                obj.month = m;
+                obj.day = d;
+                obj.year = y;
+                break;
+            }
+            else
+            {
+                cout << "Invalid date. Try again.\n";
+            }
         }
 
-        return day <= monthInYear[month - 1];
+        return in;
     }
 };
 
 int main(int argc, char const *argv[])
 {
-    int month, day, year;
-    Date d;
+    Date d1, d2;
 
-    cout << "Enter the month: ";
-    cin >> month;
+    cin >> d1;
+    cin >> d2;
 
-    cout << "Enter the day: ";
-    cin >> day;
+    cout << "\nFirst Date: " << d1 << endl;
+    cout << "Second Date: " << d2 << endl;
 
-    cout << "Enter the year: ";
-    cin >> year;
+    cout << "\nIncrementing first date: " << ++d1 << endl;
+    cout << "Postfix increment: " << d1++ << endl;
+    cout << "After postfix: " << d1 << endl;
 
-    d.dateForm(month, day, year);
+    cout << "\nDecrementing second date: " << --d2 << endl;
+    cout << "Postfix decrement: " << d2-- << endl;
+    cout << "After postfix: " << d2 << endl;
+
+    cout << "\nDifference in days: " << (d1 - d2) << " days\n";
 
     return 0;
 }
