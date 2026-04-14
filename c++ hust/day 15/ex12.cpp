@@ -1,13 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class ex1
-{
-private:
-    
-public:
 
-};
 
 int main(int argc, char const *argv[])
 {

@@ -1,16 +1,19 @@
 #include <iostream>
 using namespace std;
 
-class ex1
+template <typename T>
+T absolute(T a)
 {
-private:
-    
-public:
-
-};
+    if (a >= 0)
+    {
+        return a;
+    }
+    return a - (2 * a);
+}
 
 int main(int argc, char const *argv[])
 {
-
+    int a = -5;
+    cout << "Absolute: " << absolute<int>(a) << endl;
     return 0;
 }
