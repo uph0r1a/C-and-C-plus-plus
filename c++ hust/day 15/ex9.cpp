@@ -3,7 +3,6 @@
 #include <cstdlib>
 using namespace std;
 
-// ===================== SimpleVector =====================
 template <typename T>
 class SimpleVector
 {
@@ -11,27 +10,25 @@ private:
    T *aptr;
    int arraySize;
 
-   void memError()
+   void memError() const
    {
       cout << "ERROR: Cannot allocate memory.\n";
       exit(EXIT_FAILURE);
    }
 
-   void subError()
+   void subError() const
    {
       cout << "ERROR: Subscript out of range.\n";
       exit(EXIT_FAILURE);
    }
 
 public:
-   // Default constructor
    SimpleVector()
    {
       aptr = nullptr;
       arraySize = 0;
    }
 
-   // Constructor
    SimpleVector(int s)
    {
       arraySize = s;
@@ -48,7 +45,6 @@ public:
          aptr[i] = T();
    }
 
-   // Copy constructor
    SimpleVector(const SimpleVector &obj)
    {
       arraySize = obj.arraySize;
@@ -61,7 +57,6 @@ public:
          aptr[i] = obj.aptr[i];
    }
 
-   // Destructor
    ~SimpleVector()
    {
       delete[] aptr;
@@ -87,41 +82,62 @@ public:
    }
 };
 
-
-// ===================== SearchableVector =====================
 template <typename T>
 class SearchableVector : public SimpleVector<T>
 {
 public:
-   // Default constructor
    SearchableVector() : SimpleVector<T>() {}
 
-   // Constructor
    SearchableVector(int size) : SimpleVector<T>(size) {}
 
-   // Copy constructor
    SearchableVector(const SearchableVector &obj)
-      : SimpleVector<T>(obj.size())
+       : SimpleVector<T>(obj.size())
    {
       for (int i = 0; i < this->size(); i++)
          (*this)[i] = obj[i];
    }
 
-   // Search function
+   void sort()
+   {
+      int n = this->size();
+      for (int i = 0; i < n - 1; i++)
+      {
+         for (int j = 0; j < n - i - 1; j++)
+         {
+            if ((*this)[j] > (*this)[j + 1])
+            {
+               T temp = (*this)[j];
+               (*this)[j] = (*this)[j + 1];
+               (*this)[j + 1] = temp;
+            }
+         }
+      }
+   }
+
    int findItem(const T item)
    {
-      for (int i = 0; i < this->size(); i++)   // FIXED (was <=)
+      sort();
+
+      int low = 0;
+      int high = this->size() - 1;
+
+      while (low <= high)
       {
-         if (this->getElementAt(i) == item)
-            return i;
+         int mid = (low + high) / 2;
+
+         if (this->getElementAt(mid) == item)
+            return mid;
+         else if (this->getElementAt(mid) > item)
+            high = mid - 1;
+         else
+            low = mid + 1;
       }
+
       return -1;
    }
 };
 
-
-// ===================== MAIN =====================
-int main()
+int main(int argc, char const *argv[])
 {
    const int SIZE = 10;
    int result;
@@ -129,14 +145,12 @@ int main()
    SearchableVector<int> intTable(SIZE);
    SearchableVector<double> doubleTable(SIZE);
 
-   // Fill data
    for (int i = 0; i < SIZE; i++)
    {
       intTable[i] = i * 2;
       doubleTable[i] = i * 2.14;
    }
 
-   // Display
    cout << "These values are in intTable:\n";
    for (int i = 0; i < SIZE; i++)
       cout << intTable[i] << " ";
@@ -147,7 +161,6 @@ int main()
       cout << doubleTable[i] << " ";
    cout << "\n";
 
-   // Search int
    cout << "\nSearching for 6 in intTable.\n";
    result = intTable.findItem(6);
    if (result == -1)
@@ -155,7 +168,6 @@ int main()
    else
       cout << "6 found at index " << result << endl;
 
-   // Search double
    cout << "\nSearching for 12.84 in doubleTable.\n";
    result = doubleTable.findItem(12.84);
    if (result == -1)
