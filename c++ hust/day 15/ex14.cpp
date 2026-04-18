@@ -1,7 +1,8 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int *Sort(int arr[], int size)
+vector<int> Sort(vector<int> arr, int size)
 {
     for (int i = 0; i < size - 1; i++)
     {
@@ -18,7 +19,7 @@ int *Sort(int arr[], int size)
     return arr;
 }
 
-float Average(int arr[], int size)
+float Average(vector<int> arr, int size)
 {
     int sum = 0;
     for (int i = 0; i < size; i++)
@@ -30,33 +31,42 @@ float Average(int arr[], int size)
 
 int main(int argc, char const *argv[])
 {
-    int size;
-    cout << "Enter a array size: ";
+    char choice;
+    vector<int> arr;
+
     while (1)
     {
-        cin >> size;
-        if (size >= 0)
-        {
-            break;
-        }
-        cout << "Array size cannot be negative\nRe-enter a array size: ";
-    }
-
-    int *arr = new int[size];
-
-    for (int i = 0; i < size; i++)
-    {
-        cout << "Enter score number " << i + 1 << ": ";
+        cout << "Enter score number: ";
         while (1)
         {
-            cin >> arr[i];
-            if (arr[i] >= 0)
+            int tmp;
+            cin >> tmp;
+            if (tmp >= 0)
+            {
+                arr.push_back(tmp);
+                break;
+            }
+            cout << "Test score cannot be negative\nRe-enter score number: ";
+        }
+
+        while (1)
+        {
+            cout << "Do you want to continue(Y/N)?";
+            cin >> choice;
+            if (tolower(choice) == 'y' || tolower(choice) == 'n')
             {
                 break;
             }
-            cout << "Test score cannot be negative\nEnter score number " << i + 1 << ": ";
+            cout << "Invalid choice\n";
+        }
+
+        if (tolower(choice) == 'n')
+        {
+            break;
         }
     }
+
+    int size = arr.size();
 
     arr = Sort(arr, size);
     float average = Average(arr, size);
@@ -64,10 +74,10 @@ int main(int argc, char const *argv[])
     cout << "Sort score array: " << endl;
     for (int i = 0; i < size; i++)
     {
-        cout << arr[i] << endl;
+        cout << arr[i] << " ";
     }
 
-    cout << "Average score: " << average << endl;
+    cout << "\nAverage score: " << average << endl;
 
     return 0;
 }

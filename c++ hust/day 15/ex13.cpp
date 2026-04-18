@@ -1,18 +1,21 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 void Rainfall()
 {
-    double rainfall[12], sum = 0, max, min;
+    vector<double> rainfall(12);
+    double sum = 0, max, min, tmp;
     int maxMonth, minMonth;
     for (int i = 0; i < 12; i++)
     {
         cout << "Enter the total rainfall of month " << i + 1 << ": ";
         while (1)
         {
-            cin >> rainfall[i];
-            if (rainfall[i] >= 0)
+            cin >> tmp;
+            if (tmp >= 0)
             {
+                rainfall[i] = tmp;
                 break;
             }
             cout << "Monthly rainfall figures cannot be negative\nRe-enter the total rainfall of month " << i + 1 << ": ";

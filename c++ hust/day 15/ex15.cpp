@@ -1,17 +1,12 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 bool accValidation(vector<int> acc, int accInput)
 {
-    for (int i = 0; i < acc.size(); i++)
-    {
-        if (accInput == acc[i])
-        {
-            return true;
-        }
-    }
-    return false;
+    sort(acc.begin(), acc.end());
+    return binary_search(acc.begin(), acc.end(), accInput);
 }
 
 int main(int argc, char const *argv[])

@@ -7,30 +7,28 @@ template <typename T>
 class SimpleVector
 {
 private:
-   T *aptr;          // Pointer to the allocated array
-   int arraySize;    // Number of elements in the array
+   T *aptr;
+   int arraySize;
 
-   void memError()   // Handles memory allocation errors
+   void memError()
    {
       cout << "ERROR: Cannot allocate memory.\n";
       exit(EXIT_FAILURE);
    }
 
-   void subError()   // Handles subscripts out of range
+   void subError()
    {
       cout << "ERROR: Subscript out of range.\n";
       exit(EXIT_FAILURE);
    }
 
 public:
-   // Default constructor
    SimpleVector()
    {
       aptr = nullptr;
       arraySize = 0;
    }
 
-   // Constructor
    SimpleVector(int s)
    {
       arraySize = s;
@@ -44,10 +42,9 @@ public:
       }
 
       for (int i = 0; i < arraySize; i++)
-         aptr[i] = T();  // better than = 0 for templates
+         aptr[i] = T();
    }
 
-   // Copy constructor
    SimpleVector(const SimpleVector &obj)
    {
       arraySize = obj.arraySize;
@@ -60,19 +57,16 @@ public:
          aptr[i] = obj.aptr[i];
    }
 
-   // Destructor
    ~SimpleVector()
    {
       delete[] aptr;
    }
 
-   // Return size
    int size() const
    {
       return arraySize;
    }
 
-   // Get element
    T getElementAt(int sub)
    {
       if (sub < 0 || sub >= arraySize)
@@ -80,7 +74,6 @@ public:
       return aptr[sub];
    }
 
-   // Overloaded []
    T &operator[](const int &sub)
    {
       if (sub < 0 || sub >= arraySize)
@@ -90,24 +83,45 @@ public:
 };
 
 template <typename T>
-class SortableVector : public SimpleVector
+class SortableVector : public SimpleVector<T>
 {
-private: 
-
 public:
-    
+   SortableVector() : SimpleVector<T>() {}
+
+   SortableVector(int size) : SimpleVector<T>(size) {}
+
+   SortableVector(const SortableVector &obj)
+       : SimpleVector<T>(obj.size())
+   {
+      for (int i = 0; i < this->size(); i++)
+         (*this)[i] = obj[i];
+   }
+
+   void sort()
+   {
+      int n = this->size();
+      for (int i = 0; i < n - 1; i++)
+      {
+         for (int j = 0; j < n - i - 1; j++)
+         {
+            if ((*this)[j] > (*this)[j + 1])
+            {
+               T temp = (*this)[j];
+               (*this)[j] = (*this)[j + 1];
+               (*this)[j + 1] = temp;
+            }
+         }
+      }
+   }
 };
 
-
-// ===== MAIN PROGRAM =====
 int main(int argc, char const *argv[])
 {
    const int SIZE = 10;
-   
-   SimpleVector<int> intTable(SIZE);
-   SimpleVector<double> doubleTable(SIZE);
 
-   // Fill values
+   SortableVector<int> intTable(SIZE);
+   SortableVector<double> doubleTable(SIZE);
+
    for (int i = 0; i < SIZE; i++)
    {
       intTable[i] = i * 2;
@@ -124,7 +138,6 @@ int main(int argc, char const *argv[])
       cout << doubleTable[i] << " ";
    cout << endl;
 
-   // Add 5
    cout << "\nAdding 5 to each element...\n";
    for (int i = 0; i < SIZE; i++)
    {
@@ -132,7 +145,6 @@ int main(int argc, char const *argv[])
       doubleTable[i] += 5;
    }
 
-   // Display again
    cout << "intTable:\n";
    for (int i = 0; i < SIZE; i++)
       cout << intTable[i] << " ";
@@ -143,7 +155,6 @@ int main(int argc, char const *argv[])
       cout << doubleTable[i] << " ";
    cout << endl;
 
-   // Increment
    cout << "\nIncrementing each element...\n";
    for (int i = 0; i < SIZE; i++)
    {
@@ -151,7 +162,6 @@ int main(int argc, char const *argv[])
       doubleTable[i]++;
    }
 
-   // Final display
    cout << "intTable:\n";
    for (int i = 0; i < SIZE; i++)
       cout << intTable[i] << " ";

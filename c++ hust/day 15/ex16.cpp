@@ -11,8 +11,18 @@ private:
 public:
     Employee(string name = "", int number = 0, string date = "")
         : employeeName(name),
-          employeeNumber(number),
-          hireDate(date) {}
+          hireDate(date)
+    {
+        if (number < 0 || number > 9999)
+        {
+            throw InvalidEmployeeNumber();
+        }
+        employeeNumber = number;
+    }
+
+    class InvalidEmployeeNumber
+    {
+    };
 
     void setName(string name)
     {
@@ -53,9 +63,29 @@ private:
 
 public:
     ProductionWorker(string name, int number, string date, int s, double rate)
-        : Employee(name, number, date),
-          shift((s == 1 || s == 2 ? s : 1)),
-          hourlyPayRate(rate) {}
+        : Employee(name, number, date)
+    {
+        if (s < 1 || s > 2)
+        {
+            throw InvalidShift();
+        }
+
+        if (rate < 0)
+        {
+            throw InvalidPayRate();
+        }
+
+        shift = s;
+        hourlyPayRate = rate;
+    }
+
+    class InvalidShift
+    {
+    };
+
+    class InvalidPayRate
+    {
+    };
 
     void setShift(int s)
     {
@@ -83,7 +113,7 @@ public:
 
 int main(int argc, char const *argv[])
 {
-    ProductionWorker worker("John Doe", 12345, "2023-05-10", 2, 18.75);
+    ProductionWorker worker("John Doe", 1234, "2023-05-10", 1, 18.75);
 
     cout << "Employee Name: " << worker.getName() << endl;
     cout << "Employee Number: " << worker.getNumber() << endl;
