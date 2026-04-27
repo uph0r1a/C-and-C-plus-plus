@@ -1,0 +1,13 @@
+BANG LUONG MOI NAM 2025 (THEO PHONG BAN, LUONG GIAM DAN)
+Ma NV      Ho Ten              Dia Chi         NamVao  HeSo    PhuCap      TongLuong   PhongBan
+--------------------------------------------------------------------------------------------------
+SF1007     Pham Thanh Tung      Hai Duong       2014    5.0     1500000     21500000    CNTT
+SF1001     Nguyen Minh Son      Nam Dinh        2016    4.0     1000000     17000000    CNTT
+SF1000     Tran Quoc Tuan       Ha Noi          2020    2.8     800000      12000000    CNTT
+SF1008     Tran Duc Minh        Ha Nam          2020    2.8     800000      12000000    CNTT
+SF1003     Bui Minh Khue        Hai Duong       2022    2.0     700000      8700000     CNTT
+SF1006     Vu Phuong Thao       Ha Nam          2016    4.0     1000000     17000000    KD
+SF1009     Le Minh Huy          Hai Phong       2020    2.8     800000      12000000    KD
+SF1005     Dang Hai Nam         Thai Binh       2022    2.0     700000      8700000     KD
+SF1002     Cao Ba Cuong         Thai Binh       2016    4.0     1000000     17000000    KT
+SF1004     Le Hai Ha            Ha Noi          2018    3.2     900000      13700000    KT

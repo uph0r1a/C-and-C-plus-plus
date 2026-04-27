@@ -1,0 +1,13 @@
+DANH SACH LUONG NAM 2024 (GIAM DAN)
+Ma NV      Ho Ten              Dia Chi         NamVao  HeSo    PhuCap      TongLuong   PhongBan
+--------------------------------------------------------------------------------------------------
+SF1007     Pham Thanh Tung      Hai Duong       2016    4.0     1000000     17000000    CNTT
+SF1001     Nguyen Minh Son      Nam Dinh        2018    3.2     500000      13300000    CNTT
+SF1002     Cao Ba Cuong         Thai Binh       2018    3.2     500000      13300000    KT
+SF1006     Vu Phuong Thao       Ha Nam          2018    3.2     500000      13300000    KD
+SF1004     Le Hai Ha            Ha Noi          2020    2.8     400000      11600000    KT
+SF1000     Tran Quoc Tuan       Ha Noi          2022    2.0     300000      8300000     CNTT
+SF1008     Tran Duc Minh        Ha Nam          2022    2.0     300000      8300000     CNTT
+SF1009     Le Minh Huy          Hai Phong       2022    2.0     300000      8300000     KD
+SF1003     Bui Minh Khue        Hai Duong       2024    1.5     200000      6200000     CNTT
+SF1005     Dang Hai Nam         Thai Binh       2024    1.5     200000      6200000     KD
